@@ -11,7 +11,7 @@ sql_transaction = []
 connection = sqlite3.connect('{}.db'.format(timeframe))
 c = connection.cursor()
 
-c.execute('DROP TABLE IF EXISTS parent_reply')
+# c.execute('DROP TABLE IF EXISTS parent_reply')
 
 def create_table():
 	c.execute('CREATE TABLE IF NOT EXISTS parent_reply (parent_id TEXT PRIMARY KEY, comment_id TEXT UNIQUE, parent TEXT, comment TEXT, subreddit TEXT, unix INT, score INT)')
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 	row_counter = 0
 	paired_rows = 0
 
-	with open("{}/Desktop/RC_{}".format(home, timeframe), buffering=1000) as f:
+	with open("{}/Desktop/chatBot/RC_{}".format(home, timeframe), buffering=1000) as f:
 		for row in f:
 			row_counter += 1
 			row = json.loads(row)
