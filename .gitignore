@@ -1,9 +1,9 @@
 RC_2006-03
 RC_2008-07
 RC_2008-05
+RC_2008-12
 test.from
 test.to
 train.from
 train.to
 
-git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch RC_2008-07' HEAD
