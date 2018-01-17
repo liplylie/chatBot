@@ -4,16 +4,17 @@ from datetime import datetime
 from os.path import expanduser
 
 home = expanduser("~")
-timeframe = '2007-12'
+dbName = 'RedditData'
+timeframe = '2008-05'
 sql_transaction = []
 start_row = 0
 cleanup = 100000
 
 
-connection = sqlite3.connect('{}.db'.format(timeframe))
+connection = sqlite3.connect('{}.db'.format(dbName))
 c = connection.cursor()
 
-c.execute('DROP TABLE IF EXISTS parent_reply')
+# c.execute('DROP TABLE IF EXISTS parent_reply')
 
 def create_table():
     c.execute("CREATE TABLE IF NOT EXISTS parent_reply(parent_id TEXT PRIMARY KEY, comment_id TEXT UNIQUE, parent TEXT, comment TEXT, subreddit TEXT, unix INT, score INT)")
