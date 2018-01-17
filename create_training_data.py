@@ -1,6 +1,6 @@
 import sqlite3
 import pandas as pd
-#have to build code using py3
+#have to build code using python3
 dbName = "RedditData"
 timeframes = [dbName]
 
