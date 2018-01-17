@@ -5,3 +5,5 @@ test.from
 test.to
 train.from
 train.to
+
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch RC_2008-07' HEAD
